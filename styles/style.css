@@ -1,0 +1,86 @@
+
+div {
+    font-family: Segoe UI, Helvetica;
+    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:  ellipsis;
+}
+.container:focus {
+    outline: none !important;
+    border:1px solid #E6E6E6;  
+   
+}
+.toggleLabel{
+  color: black;
+  position: absolute;
+  cursor: pointer;
+  top:0;
+  left: 38px;
+  font-size: 14px;
+  width: 85%;
+}
+.container{
+  position: relative;
+  width: 99%;
+  height: 22px;
+  border:1px solid white; 
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 29px;
+  top:2px;
+  height: 15.5px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  -webkit-transition: .2s;
+  transition: .2s;
+  border-style: solid;
+  border-color: gray;
+  border-width: 1px;
+  border-radius: 34px;
+}
+/*internal slider */
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  left: 3px;
+  bottom: 2px;
+  background-color: gray;
+  -webkit-transition: .2s;
+  transition: .2s;
+  border-radius: 100%;
+  border-color: gray;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.on .slider {
+background-color: gray;
+  
+}
+
+.on .slider:before {
+  background-color: white;
+  border-color: white;
+  -webkit-transform: translateX(11px);
+  -ms-transform: translateX(11px);
+  transform: translateX(11px);
+}
+
+.errorMessage{
+  color: red;
+}
