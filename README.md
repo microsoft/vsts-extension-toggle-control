@@ -2,6 +2,8 @@
 
 [Learn how to build your own custom control for the work item form.](https://www.visualstudio.com/en-us/docs/integrate/extensions/develop/custom-control)
 
+<img src="./img/logo.JPG" style="width: 150px;" />
+
 ### Usage ###
 
 1. Clone the repository.
