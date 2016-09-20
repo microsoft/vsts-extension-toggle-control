@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "toggle-control",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "name": "Toggle Control",
     "scopes": [
         "vso.work",
@@ -86,8 +86,12 @@
                     {
                         "id": "FieldName",
                         "description": "The field associated with the control.",
+                        "type": "WorkItemField",
+                        "properties": {
+                            "workItemFieldTypes": ["Boolean"]
+                        },
                         "validation": {
-                            "dataType": "Field",
+                            "dataType": "String",
                             "isRequired": true
                         }
                     },
