@@ -8,7 +8,7 @@
         "vso.work_write"
     ],
     "description": "Add a toggle control to a work item type.",
-    "publisher": "MS-Devlabs",
+    "publisher": "ms-devlabs",
     "icons": {
         "default": "img/logo.JPG"
     },
