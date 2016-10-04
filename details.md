@@ -1,4 +1,4 @@
-> This is currently only available on TFS "15" or later and VSTS.
+> This is currently only available on VSTS and TFS "15" or later.
 
 ## Customize your work item form with a toggle control ##
 
