@@ -18,4 +18,4 @@ var provider = () => {
     }
 };
 
-VSS.register("nelsontroncoso.vsts-toggle-control-dev.toggle-control-contribution", provider);
+VSS.register(VSS.getContribution().id, provider);

@@ -7,8 +7,8 @@
         "vso.work",
         "vso.work_write"
     ],
-    "description": "Describe your extension.",
-    "publisher": "nelsontroncoso",
+    "description": "Add a toggle control to a work item type.",
+    "publisher": "ms-devlabs",
     "icons": {
         "default": "img/logo.JPG"
     },
@@ -18,7 +18,8 @@
         }
     ],
     "tags": [
-        "Sample"
+        "Work items",
+        "Work item control"
     ],
     "content": {
         "details": {
@@ -26,23 +27,17 @@
         }
     },
     "links": {
-        "home": {
-            "uri": "https://bit.ly"
-        },
-        "getstarted": {
-            "uri": "https://bit.ly"
-        },
         "learn": {
-            "uri": "https://bit.ly"
+            "uri": "https://github.com/Microsoft/vsts-toggle-wit-custom-control/blob/master/README.md"
         },
         "support": {
-            "uri": "https://bit.ly"
+            "uri": "https://github.com/Microsoft/vsts-toggle-wit-custom-control"
         },
         "repository": {
-            "uri": "https://bit.ly"
+            "uri": "https://github.com/Microsoft/vsts-toggle-wit-custom-control"
         },
         "issues": {
-            "uri": "https://bit.ly"
+            "uri": "https://github.com/Microsoft/vsts-toggle-wit-custom-control/issues"
         }
     },
     "branding": {
@@ -55,7 +50,7 @@
             "addressable": true
         },
         {
-            "path": "scripts",
+            "path": "dist",
             "addressable": true
         },
         {
@@ -68,7 +63,7 @@
         }
     ],
     "categories": [
-        "Integrate"
+        "Plan and track"
     ],
     "contributions": [
         {
@@ -78,17 +73,17 @@
                 "ms.vss-work-web.work-item-form"
             ],
             "properties": {
-                "name": "Priority",
+                "name": "Toggle",
                 "group": "contributed",
                 "uri": "index.html",
                 "height": 28,
                 "inputs": [
                     {
                         "id": "FieldName",
-                        "description": "The field associated with the control.",
+                        "name": "Choose field to back the control",
                         "type": "WorkItemField",
                         "properties": {
-                            "workItemFieldTypes": ["Boolean"]
+                            "workItemFieldTypes": ["Boolean", "String", "Integer"]
                         },
                         "validation": {
                             "dataType": "String",
@@ -97,7 +92,7 @@
                     },
                     {
                         "id": "TrueFieldValue",
-                        "description": "The true state value.",
+                        "name": "Value when true",
                         "validation": {
                             "dataType": "String",
                             "isRequired": false
@@ -105,7 +100,7 @@
                     },
                     {
                         "id": "TrueLabel",
-                        "description": "The label for true state.",
+                        "name": "Label when true",
                         "validation": {
                             "dataType": "String",
                             "isRequired": false
@@ -113,7 +108,7 @@
                     },
                     {
                         "id": "FalseFieldValue",
-                        "description": "The false state value.",
+                        "name": "Value when false",
                         "validation": {
                             "dataType": "String",
                             "isRequired": false
@@ -121,7 +116,7 @@
                     },
                     {
                         "id": "FalseLabel",
-                        "description": "The label for false state.",
+                        "name": "Label when false",
                         "validation": {
                             "dataType": "String",
                             "isRequired": false
