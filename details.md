@@ -1,35 +1,47 @@
-> This is currently only available on VSTS and TFS "15" or later.
+> Currently only available on TFS "15" or later and Visual Studio Team Services
 
-## Customize your work item form with a toggle control ##
+![Work item form](dist/img/form.png)
 
-Represent your current boolean, binary string and binary integer fields with an easy-to-use toggle control on the work item form. 
+# Easily visualize the state of boolean fields
 
-You can customize the labels you would like to appear on your control. Additionally, the control can be used by both your mouse and keyboard (space bar, left and right arrow keys).
+![Toggle control on](dist/img/control.png) 
 
-## Quick steps to get started ##
+![Toggle control off](dist/img/toggleoff.png)
 
-1. Navigate to your work item form customization page and choose which field (boolean, binary string or binary integer) you would like to replace with the toggle control.
+# How to get started
+## Visual Studio Team Services
 
-2. Learn about how to customize the toggle control directly on XML [here](https://github.com/Microsoft/vsts-toggle-wit-custom-control/blob/master/README.md) for TFS. 
+1. Navigate to your work item form customization page and add a Toggle.
 
-## Supported browsers ##
+![Layout Customization](dist/img/layoutCustomization.png)
 
-* Internet Explorer
-* Microsoft Edge
-* Google Chrome 
-* Firefox
+2. Edit the control so it can use the right field, labels, and values.
 
-## Learn more ##
+![Configuration](dist/img/configuration.png)
+
+> Supported field types are boolean fields and picklists with only two values.
+
+## TFS On-Premise 
+
+We recommend TFS 2015 RC2 and higher when running this extension.
+
+[Learn more](https://github.com/Microsoft/vsts-extension-toggle-control/blob/master/README.md) about how to customize the toggle control directly on XML.
+
+# Source code
 
 The [source](https://github.com/Microsoft/vsts-toggle-wit-custom-control) for this extension can be found on Github - feel free to take, fork and extend. 
 
 You can also learn how to build your own custom control extension for the work item form [here](https://www.visualstudio.com/en-us/docs/integrate/extensions/develop/custom-control). 
 
-## Contributors ##
+> Microsoft DevLabs is an outlet for experiments from Microsoft, experiments that represent some of the latest ideas 
+around developer tools. Solutions in this category are designed for broad usage, and you are encouraged to use and 
+provide feedback on them; however, these extensions are not supported nor are any commitments made as to their longevity.
+
+# Contributors
 
 We thank the following contributor(s) for this extension: Alison Chow, Maria McLaughlin and Nelson Troncoso Aldas.
 
-## Feedback ##
+# Feedback
 
 We need your feedback! Here are some ways to connect with us:
 
