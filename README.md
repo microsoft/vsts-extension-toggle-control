@@ -2,7 +2,7 @@
 
 [Learn how to build your own custom control for the work item form.](https://www.visualstudio.com/en-us/docs/integrate/extensions/develop/custom-control)
 
-<img src="./img/control.PNG" style="width: 75px;" />
+![Control](img/control.png)
 
 ### Usage ###
 
