@@ -1,23 +1,25 @@
 > Currently only available on TFS "15" or later and Visual Studio Team Services
 
-![Work item form](img/form.png)
+![Work item form](dist/img/form.png)
 
-# Easily visualize state of boolean fields
+# Easily visualize the state of boolean fields
 
-![Toggle control on](img/control.png) 
+![Toggle control on](dist/img/control.png) 
 
-![Toggle control off](img/toggleoff.png)
+![Toggle control off](dist/img/toggleoff.png)
 
 # How to get started
 ## Visual Studio Team Services
 
 1. Navigate to your work item form customization page and add a Toggle.
 
-![Layout Customization](img/layoutCustomization.png)
+![Layout Customization](dist/img/layoutCustomization.png)
 
 2. Edit the control so it can use the right field, labels, and values.
 
-![Configuration](img/configuration.png)
+![Configuration](dist/img/configuration.png)
+
+> Supported field types are boolean fields and picklists with only two values.
 
 ## TFS On-Premise 
 
