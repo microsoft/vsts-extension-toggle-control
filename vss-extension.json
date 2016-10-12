@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "toggle-control",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "name": "Toggle Control",
     "scopes": [
         "vso.work",
@@ -10,7 +10,7 @@
     "description": "Add a toggle control to a work item type.",
     "publisher": "ms-devlabs",
     "icons": {
-        "default": "img/control.PNG"
+        "default": "img/control.png"
     },
     "targets": [
         {
@@ -28,16 +28,16 @@
     },
     "links": {
         "learn": {
-            "uri": "https://github.com/Microsoft/vsts-toggle-wit-custom-control/blob/master/README.md"
+            "uri": "https://github.com/Microsoft/vsts-extension-toggle-control/blob/master/README.md"
         },
         "support": {
-            "uri": "https://github.com/Microsoft/vsts-toggle-wit-custom-control"
+            "uri": "https://github.com/Microsoft/vsts-extension-toggle-control"
         },
         "repository": {
-            "uri": "https://github.com/Microsoft/vsts-toggle-wit-custom-control"
+            "uri": "https://github.com/Microsoft/vsts-extension-toggle-control"
         },
         "issues": {
-            "uri": "https://github.com/Microsoft/vsts-toggle-wit-custom-control/issues"
+            "uri": "https://github.com/Microsoft/vsts-extension-toggle-control"
         }
     },
     "branding": {
@@ -51,6 +51,10 @@
         },
         {
             "path": "dist",
+            "addressable": true
+        },
+        {
+            "path": "scripts",
             "addressable": true
         },
         {
