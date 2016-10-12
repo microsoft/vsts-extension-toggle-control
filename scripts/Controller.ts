@@ -27,7 +27,7 @@ export class Controller {
         this._initialize();
     }
     private _initialize(): void {
-        this._inputs = VSS.getConfiguration().witInputs
+        this._inputs = VSS.getConfiguration().witInputs;
         this._fieldName = InputParser.getFieldName(this._inputs);
         WitService.WorkItemFormService.getService().then(
             (service) => {
@@ -58,9 +58,9 @@ export class Controller {
         for (let field of fields) {
             if (field.referenceName === fieldname) {
                 if (field.type === FieldType.Boolean) {
-                    return { isBoolean: true, fieldLabel: field.name }
+                    return { isBoolean: true, fieldLabel: field.name };
                 }
-                return { isBoolean: false, fieldLabel: field.name }
+                return { isBoolean: false, fieldLabel: field.name };
             }
         }
         throw "Field not found.";
