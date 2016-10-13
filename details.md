@@ -19,8 +19,6 @@
 
 ![Configuration](img/configuration.png)
 
-> Supported field types are boolean fields and picklists with only two values.
-
 ## TFS On-Premise 
 
 We recommend TFS 2015 RC2 and higher when running this extension.
