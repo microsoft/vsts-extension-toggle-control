@@ -1,9 +1,7 @@
 /// <reference path="../typings/index.d.ts" />
 import { Model } from "./Model";
-import { ToggleState } from "./ToggleState"
 
 export class View {
-
     private _model: Model;
     private _container: JQuery;
     private _toggle: JQuery;
@@ -54,25 +52,19 @@ export class View {
     }
 
     public refresh(): void {
-        switch (this._model.getToggleState()) {
-            case ToggleState.True:
-                this._toggle.addClass("on");
-                this._container.attr("aria-pressed", "true");
-                this.showInfo();
-                break;
-            case ToggleState.False:
-            case ToggleState.Indeterminate:
-                this._toggle.removeClass("on");
-                this._container.attr("aria-pressed", "false");
-                this.showInfo();
-                break;
+        if(this._model.getToggleState()) {
+            this._toggle.addClass("on");
+            this._container.attr("aria-pressed", "true");
+        } else {
+            this._toggle.removeClass("on");
+            this._container.attr("aria-pressed", "false");            
         }
+        this.showInfo();
     }
 
     private showInfo(): void {
         $(this._toggleLabel).empty().prepend(this._model.getLabel());
         $(this._container).attr("title", this._model.getFieldLabel() + 
-         ": Value = " + this._model.getSelectedValue() + ", " + "Label = " + this._model.getLabel());
-
+         ": Value = " + this._model.getToggleState() + ", " + "Label = " + this._model.getLabel());
     }
 }

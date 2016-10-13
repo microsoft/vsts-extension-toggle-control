@@ -1,7 +1,4 @@
 import { IControlConfigurations } from "./IControlConfigurations";
-import { IStateMetadata } from "./IStateMetadata";
-import { ToggleState } from "./ToggleState";
-
 
 /**
  * Model takes inputs of options, an interface with True and False configurations from InputParser.
@@ -11,7 +8,7 @@ import { ToggleState } from "./ToggleState";
  */
 export class Model {
 
-    constructor(fieldLabel: string, configurations: IControlConfigurations, initialValue: string) {
+    constructor(fieldLabel: string, configurations: IControlConfigurations, initialValue: boolean) {
         this._fieldLabel = fieldLabel;
         this._configurations = configurations;
         this.setSelectedValue(initialValue);
@@ -19,86 +16,47 @@ export class Model {
 
     private _fieldLabel: string = "";
 
-    private _selectedValue: string = "";
-
     private _configurations: IControlConfigurations = {
-        True: { value: "", label: "" },
-        False: { value: "", label: "" }
+        TrueLabel: "",
+        FalseLabel: ""
     }
 
-    private _stateMetadata: IStateMetadata = { value: "", label: "" };
+    private _stateLabel: string = "";
 
-    private _toggleState: ToggleState = ToggleState.Indeterminate;
-
+    private _toggleState: boolean = true;
 
     public toggle(): void {
-
-        switch (this._toggleState) {
-            case ToggleState.True:
-                this.setSelectedValue(this._configurations.False.value);
-                break;
-            case ToggleState.False:
-                this.setSelectedValue(this._configurations.True.value);
-                break;
-            case ToggleState.Indeterminate:
-                this.setSelectedValue(this._configurations.True.value);
-                break;
-        }
+        this.setSelectedValue(!this._toggleState);
     }
 
     public toggleToTrueState(): void {
-
-        if (this._toggleState !== ToggleState.True) {
-            this.setSelectedValue(this._configurations.True.value);
-        }
-
+        this.setSelectedValue(true);
     }
 
     public toggleToFalseState(): void {
-
-         if (this._toggleState === ToggleState.True) {
-            this.setSelectedValue(this._configurations.False.value);
-        }
-
+        this.setSelectedValue(false);
     }
 
-    //  Sets a selected value. Also, it will change the _toggleState and _stateMetadata depending on the 
-    //  value selected. If the selectedValue set is not part of any configuration, it will set _toggleState 
-    //  to Indeterminate and it will set the value and label to the selectedValue.
+    //  Sets a selected value and change the _toggleState and _stateLabel
+    public setSelectedValue(val: boolean): void {
+        this._toggleState = val;
 
-
-    public setSelectedValue(val: string): void {
-
-        this._selectedValue = String(val);
-
-        if (this._selectedValue === this._configurations.True.value) {
-            this._toggleState = ToggleState.True;
-            this._stateMetadata = this._configurations.True;
-
-        } else if (this._selectedValue === this._configurations.False.value) {
-            this._toggleState = ToggleState.False;
-            this._stateMetadata = this._configurations.False;
-
+        if(val) {
+            this._stateLabel = this._configurations.TrueLabel;
         } else {
-            this._toggleState = ToggleState.Indeterminate;
-            this._stateMetadata = { value: this._selectedValue, label: this._selectedValue };
+            this._stateLabel = this._configurations.FalseLabel;
         }
-    }
-
-    public getSelectedValue(): string {
-        return this._selectedValue;
     }
 
     public getLabel(): string {
-        return this._stateMetadata.label;
+        return this._stateLabel;
     }
 
     public getFieldLabel(): string {
         return this._fieldLabel;
     }
 
-
-    public getToggleState(): ToggleState {
+    public getToggleState(): boolean {
         return this._toggleState;
     }
 }
