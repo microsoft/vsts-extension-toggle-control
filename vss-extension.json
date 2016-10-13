@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "toggle-control",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "name": "Toggle Control",
     "scopes": [
         "vso.work",
@@ -87,7 +87,7 @@
                         "name": "Choose field to back the control",
                         "type": "WorkItemField",
                         "properties": {
-                            "workItemFieldTypes": ["Boolean", "String", "Integer"]
+                            "workItemFieldTypes": ["Boolean"]
                         },
                         "validation": {
                             "dataType": "String",
@@ -95,24 +95,8 @@
                         }
                     },
                     {
-                        "id": "TrueFieldValue",
-                        "name": "Value when true",
-                        "validation": {
-                            "dataType": "String",
-                            "isRequired": false
-                        }
-                    },
-                    {
                         "id": "TrueLabel",
                         "name": "Label when true",
-                        "validation": {
-                            "dataType": "String",
-                            "isRequired": false
-                        }
-                    },
-                    {
-                        "id": "FalseFieldValue",
-                        "name": "Value when false",
                         "validation": {
                             "dataType": "String",
                             "isRequired": false

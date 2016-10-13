@@ -1,6 +1,5 @@
 import { expect } from 'chai';
 import { IControlConfigurations } from './IControlConfigurations';
-import { IStateMetadata } from "./IStateMetadata"
 import { InputParser } from "./InputParser"
 
 describe("InputParser", () => {
