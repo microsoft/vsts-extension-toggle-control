@@ -10,7 +10,7 @@
     "description": "Add a toggle control to a work item type.",
     "publisher": "ms-devlabs",
     "icons": {
-        "default": "img/control.png"
+        "default": "img/logo.png"
     },
     "targets": [
         {
