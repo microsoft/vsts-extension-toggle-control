@@ -40,10 +40,6 @@
             "uri": "https://github.com/Microsoft/vsts-extension-toggle-control/issues"
         }
     },
-    "branding": {
-        "color": "rgb(220, 235, 252)",
-        "theme": "light"
-    },
     "files": [
         {
             "path": "img",
@@ -79,7 +75,6 @@
             ],
             "properties": {
                 "name": "Toggle control",
-                "group": "contributed",
                 "uri": "index.html",
                 "height": 28,
                 "inputs": [
