@@ -63,7 +63,7 @@ export class View {
     }
 
     private showInfo(): void {
-        $(this._toggleLabel).empty().prepend(this._model.getLabel());
+        $(this._toggleLabel).empty().text(this._model.getLabel());
         $(this._container).attr("title", this._model.getFieldLabel() + 
          ": Value = " + this._model.getToggleState() + ", " + "Label = " + this._model.getLabel());
     }
