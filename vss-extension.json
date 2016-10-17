@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "toggle-control",
-    "version": "0.1.2",
+    "version": "1.0.0",
     "name": "Toggle control",
     "scopes": [
         "vso.work",
