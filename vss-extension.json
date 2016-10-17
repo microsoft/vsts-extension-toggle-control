@@ -2,12 +2,12 @@
     "manifestVersion": 1,
     "id": "toggle-control",
     "version": "0.1.2",
-    "name": "Toggle Control",
+    "name": "Toggle control",
     "scopes": [
         "vso.work",
         "vso.work_write"
     ],
-    "description": "Add a toggle control to a work item type.",
+    "description": "Interact with your boolean fields with a toggle control.",
     "publisher": "ms-devlabs",
     "icons": {
         "default": "img/logo.png"
@@ -73,18 +73,19 @@
         {
             "id": "toggle-control-contribution",
             "type": "ms.vss-work-web.work-item-form-control",
+            "description": "Interact with your boolean fields with a toggle control.",
             "targets": [
                 "ms.vss-work-web.work-item-form"
             ],
             "properties": {
-                "name": "Toggle",
+                "name": "Toggle control",
                 "group": "contributed",
                 "uri": "index.html",
                 "height": 28,
                 "inputs": [
                     {
                         "id": "FieldName",
-                        "name": "Choose field to back the control",
+                        "name": "Select the field for this control (requires a boolean field).",
                         "type": "WorkItemField",
                         "properties": {
                             "workItemFieldTypes": ["Boolean"]
@@ -96,7 +97,7 @@
                     },
                     {
                         "id": "TrueLabel",
-                        "name": "Label when true",
+                        "name": "Choose the label for the true value. Example: Accepted",
                         "validation": {
                             "dataType": "String",
                             "isRequired": false
@@ -104,7 +105,7 @@
                     },
                     {
                         "id": "FalseLabel",
-                        "name": "Label when false",
+                        "name": "Choose the label for the false value: Example: Declined",
                         "validation": {
                             "dataType": "String",
                             "isRequired": false
