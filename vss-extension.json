@@ -100,7 +100,7 @@
                     },
                     {
                         "id": "FalseLabel",
-                        "name": "Choose the label for the false value: Example: Declined",
+                        "name": "Choose the label for the false value. Example: Declined",
                         "validation": {
                             "dataType": "String",
                             "isRequired": false
