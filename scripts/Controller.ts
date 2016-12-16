@@ -1,25 +1,25 @@
-import * as VSSService from "VSS/Service";
+
 import * as WitService from "TFS/WorkItemTracking/Services";
-import * as ExtensionContracts from "TFS/WorkItemTracking/ExtensionContracts";
 import * as WitContracts from "TFS/WorkItemTracking/Contracts";
-import { WorkItemField} from "TFS/WorkItemTracking/Contracts"
-import { FieldType } from "TFS/WorkItemTracking/Contracts"
+import { WorkItemField } from "TFS/WorkItemTracking/Contracts";
+import { FieldType } from "TFS/WorkItemTracking/Contracts";
 import { InputParser } from "./InputParser";
 import { Model } from "./Model";
 import { View } from "./View";
 import { ErrorView } from "./ErrorView";
 import * as Q from "q";
+import { IToggleConfiguration } from "./ToggleContracts";
 
 export class Controller {
     private _fieldLabel: string = "";
     private _fieldName: string = "";
     private _model: Model;
     private _view: View;
-    private _inputs: IDictionaryStringTo<string> = {
-        "FieldName": "",
-        "TrueLabel": "",
-        "FalseLabel": ""
-    }
+    private _inputs: IToggleConfiguration = {
+        FieldName: "",
+        TrueLabel: "",
+        FalseLabel: ""
+    };
 
     constructor() {
         this._initialize();
@@ -65,7 +65,7 @@ export class Controller {
     }
 
     private _handleError(error: string): void {
-        let errorView = new ErrorView(error);
+        new ErrorView(error);
     }
 
     private _updateInternal(): void {
@@ -74,7 +74,7 @@ export class Controller {
                 service.setFieldValue(this._fieldName, this._model.getToggleState()).then(
                     () => {
                         this._view.refresh();
-                    }, this._handleError)
+                    }, this._handleError);
             },
             this._handleError
         );

@@ -1,4 +1,4 @@
-import { IControlConfigurations } from "./IControlConfigurations";
+import { IToggleConfiguration, IControlConfigurations } from "./ToggleContracts";
 
 export class InputParser {
     /**
@@ -12,11 +12,11 @@ export class InputParser {
      * @return {string} The FieldName 
      * @throws Will throw an {string} error if a FieldName is not specified in the dictionary.
      */
-    public static getFieldName(inputs: IDictionaryStringTo<string>): string {
-        if (inputs["FieldName"]) {
-            return inputs["FieldName"];
+    public static getFieldName(inputs: IToggleConfiguration): string {
+        if (inputs.FieldName) {
+            return inputs.FieldName;
         }
-        throw ("FieldName not specified.")
+        throw ("FieldName not specified.");
     }
 
     /**
@@ -26,11 +26,11 @@ export class InputParser {
      *          FalseLabel: string         
      *       }
      */
-    public static getOptions(inputs: IDictionaryStringTo<string>, allowedValues: string[], isBoolean: boolean): IControlConfigurations {
+    public static getOptions(inputs: IToggleConfiguration, allowedValues: string[], isBoolean: boolean): IControlConfigurations {
         let trueLabel: string = "";
         let falseLabel: string = "";
-        trueLabel = inputs["TrueLabel"];
-        falseLabel = inputs["FalseLabel"];
+        trueLabel = inputs.TrueLabel;
+        falseLabel = inputs.FalseLabel;
 
         return this._buildOptions(trueLabel, falseLabel);
     }
@@ -39,6 +39,6 @@ export class InputParser {
         return {
             TrueLabel: trueLabel,
             FalseLabel: falseLabel
-        }
+        };
     }
 }

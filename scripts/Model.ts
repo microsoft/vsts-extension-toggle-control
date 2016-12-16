@@ -1,4 +1,4 @@
-import { IControlConfigurations } from "./IControlConfigurations";
+import { IControlConfigurations } from "./ToggleContracts";
 
 /**
  * Model takes inputs of options, an interface with True and False configurations from InputParser.
@@ -19,7 +19,7 @@ export class Model {
     private _configurations: IControlConfigurations = {
         TrueLabel: "",
         FalseLabel: ""
-    }
+    };
 
     private _stateLabel: string = "";
 
@@ -37,11 +37,11 @@ export class Model {
         this.setSelectedValue(false);
     }
 
-    //  Sets a selected value and change the _toggleState and _stateLabel
+    // sets a selected value and change the _toggleState and _stateLabel
     public setSelectedValue(val: boolean): void {
         this._toggleState = val;
 
-        if(val) {
+        if (val) {
             this._stateLabel = this._configurations.TrueLabel;
         } else {
             this._stateLabel = this._configurations.FalseLabel;

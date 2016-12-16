@@ -15,7 +15,7 @@ var provider = () => {
                 control.updateExternal(changedValue);
             }
         }
-    }
+    };
 };
 
 VSS.register(VSS.getContribution().id, provider);

@@ -16,11 +16,11 @@
     "mocha": "^2.5.3",
     "requirejs": "^2.2.0",
     "tfx-cli": "^0.3.13",
-    "typescript": "^1.8.10",
+    "typescript": "^2.1.4",
     "typings": "^1.0.4",
     "vss-web-extension-sdk": "^1.100.0"
   },
-  "name": "vsts-extension-ts-seed-simple",
+  "name": "toggle-control",
   "private": true,
   "version": "0.5.0",
   "scripts": {

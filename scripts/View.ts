@@ -39,32 +39,32 @@ export class View {
         $(document).click(() => {
             this.onToggle();
         }).bind("keydown", (evt: JQueryKeyEventObject) => {
-            if (evt.keyCode == 32) {
+            if (evt.keyCode === 32) {
                 this.onToggle();
-            } else if (evt.keyCode == 39) {
-                //left key
+            } else if (evt.keyCode === 39) {
+                // left key
                 this.toggleToTrue();
-            } else if (evt.keyCode == 37) {
-                //right key
+            } else if (evt.keyCode === 37) {
+                // right key
                 this.toggleToFalse();
             }
         });
     }
 
     public refresh(): void {
-        if(this._model.getToggleState()) {
+        if (this._model.getToggleState()) {
             this._toggle.addClass("on");
             this._container.attr("aria-pressed", "true");
         } else {
             this._toggle.removeClass("on");
-            this._container.attr("aria-pressed", "false");            
+            this._container.attr("aria-pressed", "false");
         }
         this.showInfo();
     }
 
     private showInfo(): void {
         $(this._toggleLabel).empty().text(this._model.getLabel());
-        $(this._container).attr("title", this._model.getFieldLabel() + 
-         ": Value = " + this._model.getToggleState() + ", " + "Label = " + this._model.getLabel());
+        $(this._container).attr("title", this._model.getFieldLabel() +
+            ": Value = " + this._model.getToggleState() + ", " + "Label = " + this._model.getLabel());
     }
 }

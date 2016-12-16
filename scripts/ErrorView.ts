@@ -1,6 +1,6 @@
 /**
-*Purpose: This class is being used to display errors in the extension.       
-*/
+ * Purpose: This class is being used to display errors in the extension. 
+ */
 
 export class ErrorView {
 

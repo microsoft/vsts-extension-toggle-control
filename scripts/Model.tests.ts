@@ -1,9 +1,9 @@
-import { expect } from 'chai';
-import { Model } from './Model';
-import { IControlConfigurations } from './IControlConfigurations';
+import { expect } from "chai";
+import { Model } from "./Model";
+import { IControlConfigurations } from "./ToggleContracts";
 
 describe("Model", () => {
-    const fieldLabel: string = "Blocked"; 
+    const fieldLabel: string = "Blocked";
     const config1: IControlConfigurations = { TrueLabel: "True", FalseLabel: "False" };
 
     it("toggles state from true to false, sets selectedValue to False and stateMetadata to False metadata", () => {
@@ -13,13 +13,15 @@ describe("Model", () => {
         expect(model.getLabel()).to.be.equal("False");
     });
 
-    it("toggles state from true to false, sets selectedValue to False and stateMetadata to False metadata.Then toggles to false again.", () => {
-        let model: Model = new Model(fieldLabel, config1, true);
-        model.toggleToFalseState();
-        expect(model.getToggleState()).to.be.equal(false);
-        expect(model.getLabel()).to.be.equal("False");
-    });
-    
+    it(`toggles state from true to false, sets selectedValue to False 
+    and stateMetadata to False metadata.
+    Then toggles to false again.`, () => {
+            let model: Model = new Model(fieldLabel, config1, true);
+            model.toggleToFalseState();
+            expect(model.getToggleState()).to.be.equal(false);
+            expect(model.getLabel()).to.be.equal("False");
+        });
+
     it("toggles state from true to true, sets selectedValue to True and stateMetadata to True metadata.Then toggles to false.", () => {
         let model: Model = new Model(fieldLabel, config1, true);
         model.toggleToTrueState();
