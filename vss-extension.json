@@ -26,6 +26,10 @@
             "path": "details.md"
         }
     },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/Microsoft/vsts-extension-toggle-control"
+    },
     "links": {
         "learn": {
             "uri": "https://github.com/Microsoft/vsts-extension-toggle-control/blob/master/README.md"
