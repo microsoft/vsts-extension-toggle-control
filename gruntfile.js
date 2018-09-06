@@ -15,7 +15,7 @@
         },
         exec: {
             package_dev: {
-                command: "tfx extension create --manifest-globs vss-extension.json --overrides-file configs/dev.json",
+                command: "tfx extension create --manifest-globs vss-extension.json --overrides-file configs/dev.json --rev-version",
                 stdout: true,
                 stderr: true
             },
