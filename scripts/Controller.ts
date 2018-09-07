@@ -29,9 +29,8 @@ export class Controller {
         this._fieldName = InputParser.getFieldName(this._inputs);
         WitService.WorkItemFormService.getService().then(
             (service) => {
-                Q.spread<any, any>(
-                    [service.getAllowedFieldValues(this._fieldName), service.getFieldValue(this._fieldName), service.getFields()],
-                    (allowedValues: any[], currentValue: boolean, fields: WitContracts.WorkItemField[]) => {
+                this._getValues(service).then(
+                    ({allowedValues, currentValue, fields}) => {
                         const { isBoolean, fieldLabel } = this._getFieldInformation(this._fieldName, fields);
                         let options = InputParser.getOptions(this._inputs, allowedValues, isBoolean);
                         this._fieldLabel = fieldLabel;
@@ -50,6 +49,12 @@ export class Controller {
                 ).then(null, this._handleError);
             },
             this._handleError);
+    }
+
+    private _getValues(service: WitService.IWorkItemFormService): Promise<{allowedValues: any[], currentValue: boolean, fields: WitContracts.WorkItemField[]}> {
+        return service.getAllowedFieldValues(this._fieldName).then((allowedValues) => 
+            service.getFieldValue(this._fieldName).then((currentValue: boolean) => 
+                service.getFields().then((fields) => ({allowedValues, currentValue, fields}))));
     }
 
     private _getFieldInformation(fieldname: string, fields: WitContracts.WorkItemField[]): { isBoolean: boolean, fieldLabel: string } {

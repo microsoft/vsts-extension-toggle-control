@@ -1,4 +1,6 @@
 /// <reference path="../typings/index.d.ts" />
+/// <reference types="vss-web-extension-sdk" />
+
 import { Controller } from "./Controller";
 import * as ExtensionContracts from "TFS/WorkItemTracking/ExtensionContracts";
 import { WorkItemFormService } from "TFS/WorkItemTracking/Services";
