@@ -8,7 +8,7 @@
         "vso.work_write"
     ],
     "description": "Interact with your boolean fields with a toggle control.",
-    "publisher": "ottostreifel",
+    "publisher": "ms-devlabs",
     "icons": {
         "default": "img/logo.png"
     },
